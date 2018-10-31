@@ -1,4 +1,4 @@
-# 215-API-example
+# 215-hangman-project
 
 This is the hangman project
 
