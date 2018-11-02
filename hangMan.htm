@@ -66,8 +66,9 @@ function randomInt(low, high) {
 function displayMsg( str, secs) {
     document.getElementById("instruct").innerHTML = str;
 		document.getElementById("instruct").style.display = "block";
-		if (secs > 0)
+		if (secs > 0) {
 		    setTimeout("clearDisplay()", secs* 1000);
+			}
 }
 
 function clearDisplay() {
@@ -129,8 +130,9 @@ function displayMissing() {
 }
 
 function win() {
-    displayMsg("Great, we both win. Thanks!", 0);
 		clicksAllowed = false;
+    displayMsg("Great, we both win. Thanks!", 0);
+
 	  document.getElementById("gallows").style.borderColor = "darkGreen";
 	  document.getElementById("instruct").style.backgroundColor = "lightGreen";
 		document.getElementById("gameArea").style.backgroundImage= "url('imgs/win.gif')";
