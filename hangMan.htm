@@ -13,9 +13,9 @@
 #gameArea {
 					padding: 10px;
 					background-color: #cccccc;
-					width: 440px;
+					width: 375px;
 					margin: auto;
-					height: 800px;
+					height: 667px;
 
 					border: 2px solid black;
 					background-image: url("imgs/play.gif");
@@ -115,8 +115,7 @@ function lose() {
 			displayMsg(msg, 0);
 			document.getElementById("gallows").style.borderColor = "crimson";
 			document.getElementById("instruct").style.backgroundColor = "lightPink";
-			document.getElementById("startEndImg").src = "imgs/lose.gif";
-			document.getElementById("startEndImg").style.borderColor = "crimson";
+			document.getElementById("gameArea").style.backgroundImage= "url('imgs/lose.gif')";
 			document.getElementById("replay").style.display = "inline";
 			displayMissing();
 }
@@ -134,8 +133,7 @@ function win() {
 		clicksAllowed = false;
 	  document.getElementById("gallows").style.borderColor = "darkGreen";
 	  document.getElementById("instruct").style.backgroundColor = "lightGreen";
-		document.getElementById("startEndImg").src = "imgs/win.gif";
-		document.getElementById("startEndImg").style.borderColor = "darkGreen";
+		document.getElementById("gameArea").style.backgroundImage= "url('imgs/win.gif')";
 		document.getElementById("replay").style.display = "inline";
 }
 
@@ -195,7 +193,7 @@ function startUp() {
 	  for(var i=0; i<LTRS.length; i++) {
 		  document.write("<button onclick=\"selected('" + LTRS.charAt(i) + "');\" onmouseover=\"this.style.outline='#47A347 solid 2px'\" onmouseout=\"this.style.outline='none'\" style=\"margin:1px;height:30px; background-color:#193e19; color:#ffffff;\">");
       document.write(LTRS.charAt(i) + "</button>");
-			if (i == 12)
+			if (i %6==0&&i!=0)
 			   document.write("<br>");
 			}
 	</script>
